@@ -11,7 +11,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   return (
     <React.Fragment>
-      {true ? (
+      {isMobile ? (
         <div className="w-full min-h-screen h-full bg-gradient-to-r from-cyan-200 dark:from-neutral-800 via-sky-200 dark:via-neutral-800 to-blue-200 dark:to-neutral-800 md:pt-24 sm:pt-16 pt-16 pb-12">
           <div className="grid grid-rows-2 grid-flow-col md:gap-10 sm:gap-4 gap-0 items-center justify-center">
             <div className="flex justify-center h-fit">
