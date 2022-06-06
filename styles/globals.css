@@ -69,3 +69,22 @@
 .ds-bold {
   font-family: "DancingScript-bold";
 }
+
+.underline-hover-effect {
+  position: relative;
+}
+
+.underline-hover-effect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: rgba(3, 105, 161, 1);
+  transition: width 0.3s ease-out;
+}
+
+.underline-hover-effect:hover::after {
+  width: 100%;
+}
