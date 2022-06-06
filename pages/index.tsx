@@ -7,9 +7,9 @@ const Home: NextPage = () => {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-neutral-800">
       <Head>
-        <title>Kiet Nguyen</title>
+        <title>Kiet&apos;s Portfilio</title>
         <meta name="kiet Nguyen portfilio" content="This is My Portfilio" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/tiger.png" />
       </Head>
       <Navbar />
       <ProfileIntro />

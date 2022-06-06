@@ -54,7 +54,7 @@ const BackgroundSwitch: FunctionComponent<backgroundSwitchProps> = ({}) => {
   return (
     <div
       onClick={switchMode}
-      className="flex items-center justify-start gap-2 px-2 py-1 rounded-xl border-solid border-2 border-sky-500 cursor-pointer bg-sky-50 dark:bg-sky-900"
+      className="flex items-center justify-start gap-2 px-2 py-1 rounded-xl border-solid border-2 border-sky-500 cursor-pointer bg-amber-50 dark:bg-sky-900"
     >
       <Image
         width={24}
@@ -63,9 +63,9 @@ const BackgroundSwitch: FunctionComponent<backgroundSwitchProps> = ({}) => {
         alt="sun icon"
         quality={100}
       />{" "}
-      <p className="w-max qs-regular text-slate-900 dark:text-gray-100">
+      <span className="w-max qs-regular text-slate-900 dark:text-gray-100">
         {isDark ? "dark mode" : "light mode"}
-      </p>
+      </span>
     </div>
   );
 };

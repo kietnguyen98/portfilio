@@ -88,3 +88,21 @@
 .underline-hover-effect:hover::after {
   width: 100%;
 }
+
+.menu-dropdown-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.menu-dropdown-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+.menu-dropdown-exit {
+  opacity: 1;
+}
+.menu-dropdown-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}
