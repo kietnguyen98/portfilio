@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* setup quicksand font */
+
+@font-face {
+  font-family: "Quicksand-thin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Quicksand-thin"),
+    url(/fonts/Quicksand/Quicksand-Thin.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand-regular";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Quicksand-regular"),
+    url(/fonts/Quicksand/Quicksand-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Quicksand-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Quicksand-bold"),
+    url(/fonts/Quicksand/Quicksand-Bold.ttf) format("truetype");
+}
+
+.qs-thin {
+  font-family: "Quicksand-thin";
+}
+
+.qs-regular {
+  font-family: "Quicksand-regular";
+}
+
+.qs-bold {
+  font-family: "Quicksand-bold";
+}
+
+/* setup dancing script font */
+@font-face {
+  font-family: "DancingScript-regular";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("DancingScript-regular"),
+    url(/fonts/DancingScript/DancingScript-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "DancingScript-bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("DancingScript-bold"),
+    url(/fonts/DancingScript/DancingScript-Bold.ttf) format("truetype");
+}
+
+.ds-regular {
+  font-family: "DancingScript-regular";
+}
+
+.ds-bold {
+  font-family: "DancingScript-bold";
+}
