@@ -18,7 +18,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
             minHeight: "100vh",
           }}
         >
-          <div className="w-full min-h-screen h-full bg-gradient-to-r from-cyan-200 dark:from-neutral-800 via-sky-200 dark:via-neutral-800 to-blue-200 dark:to-neutral-800 md:pt-24 sm:pt-16 pt-16 pb-12">
+          <div className="w-full h-full bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-500 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-8">
             <div className="grid grid-rows-2 grid-flow-col md:gap-10 sm:gap-4 gap-0 items-center justify-center">
               <div className="flex justify-center h-fit">
                 <div className="w-fit p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl">
@@ -58,9 +58,9 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
           </div>
         </div>
       ) : (
-        <div className="w-full h-screen grid grid-cols-3 gap-10 items-center justify-center bg-gradient-to-r from-cyan-200 dark:from-neutral-800 via-sky-200 dark:via-neutral-800 to-blue-200 dark:to-neutral-800 pt-32 pb-16">
+        <div className="w-full h-screen grid grid-cols-3 gap-10 items-center justify-center bg-gradient-to-r from-cyan-100 dark:from-stone-700 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 pt-32 pb-4 xl:px-40 lg:px-20 md:px-20 sm:px-10">
           <div className="flex items-start justify-end col-span-2">
-            <div className="xl:pl-40 lg:pl-20 md:pl-12">
+            <div className="">
               <p className="ds-bold text-8xl text-sky-700 mb-4">Chào bạn !,</p>
               <p className="ds-bold text-4xl text-slate-800 dark:text-slate-100 mb-2">
                 Tôi là Kiệt. Tên đầy đủ của tôi là Nguyễn Hàn Mạnh Kiệt.
@@ -74,7 +74,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
               </p>
             </div>
           </div>
-          <div className="flex items-center justify-start col-span-1">
+          <div className="flex items-center justify-end col-span-1">
             <div className="p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl">
               <div className="xl:h-80 lg:h-64 md:h-56 xl:w-80 lg:w-64 md:w-56 bg-[url('/images/profile/Avatar.jpg')] bg-cover bg-no-repeat bg-center rounded-full border-solid border-2 border-slate-200"></div>
             </div>

@@ -3,6 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Navbar from "../components/Navbar";
 import ProfileIntro from "../components/ProfileIntro";
+import AboutMe from "../components/AboutMe";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -10,6 +11,17 @@ const Home: NextPage = () => {
   React.useEffect(() => {
     setIsMounted(true);
   }, []);
+  const aboutMeRef = React.useRef<HTMLInputElement>(null);
+  const aboutMeScroll = () => {
+    if (aboutMeRef?.current) {
+      const y =
+        aboutMeRef?.current?.getBoundingClientRect().top +
+        window.pageYOffset +
+        -64;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-neutral-800">
       <Head>
@@ -19,8 +31,9 @@ const Home: NextPage = () => {
       </Head>
       {isMounted && (
         <React.Fragment>
-          <Navbar />
+          <Navbar aboutMeScroll={aboutMeScroll} />
           <ProfileIntro />
+          <AboutMe aboutMeRef={aboutMeRef} />
         </React.Fragment>
       )}
     </div>
