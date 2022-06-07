@@ -32,7 +32,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
   return (
     <React.Fragment>
       {isMobile ? (
-        <React.Fragment>
+        <div>
           <div
             className={
               `w-full fixed top-0 ${isMenuDropdown ? "h-64" : "h-16"} ` +
@@ -74,7 +74,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
               </div>
             )}
           </div>
-        </React.Fragment>
+        </div>
       ) : (
         <div
           className={
