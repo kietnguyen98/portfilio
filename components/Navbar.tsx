@@ -6,9 +6,11 @@ import { useMediaQuery } from "react-responsive";
 import BackgroundSwitch from "./BackgroundSwitch";
 import MenuButton from "./MenuButton";
 
-type NavbarProps = {};
+type NavbarProps = {
+  aboutMeScroll: any;
+};
 
-const Navbar: FunctionComponent<NavbarProps> = ({}) => {
+const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const [navBackground, setNavBackground] = React.useState("bg-transparent");
 
@@ -16,7 +18,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
     const handleScroll = () => {
       const show = window.scrollY > 64;
       if (show) {
-        setNavBackground("backdrop-blur bg-white/5");
+        setNavBackground("backdrop-blur bg-white/5 shadow-xl");
       } else {
         setNavBackground("bg-transparent");
       }
@@ -35,7 +37,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
         <div>
           <div
             className={
-              `w-full fixed top-0 ${isMenuDropdown ? "h-64" : "h-16"} ` +
+              `w-full fixed top-0 transition duration-500 ${
+                isMenuDropdown ? "h-64" : "h-16"
+              } ` +
               (isMenuDropdown ? "backdrop-blur bg-white/5" : navBackground)
             }
           >
@@ -50,9 +54,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
               </div>
             </div>
             {isMenuDropdown && (
-              <div className="w-full h-48 flex flex-col items-center justify-center">
+              <div className="w-full h-48 flex flex-col items-center justify-center shadow-xl">
                 <div className="flex h-10 items-center justify-start underline-hover-effect">
-                  <p className="qs-regular font-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                  <p
+                    onClick={() => {
+                      setIsMenuDropdown(false);
+                      aboutMeScroll();
+                    }}
+                    className="qs-regular font-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                  >
                     VỀ TÔI
                   </p>
                 </div>
@@ -78,13 +88,17 @@ const Navbar: FunctionComponent<NavbarProps> = ({}) => {
       ) : (
         <div
           className={
-            "w-full fixed top-0 h-16 flex items-center " + navBackground
+            "w-full fixed top-0 h-16 flex transition duration-500 items-center " +
+            navBackground
           }
         >
-          <div className="w-full h-16 flex xl:px-100 lg:px-60 md:px-20 sm:px-10">
+          <div className="w-full h-16 flex xl:px-40 lg:px-20 md:px-20 sm:px-10">
             <div className="flex h-16 xl:gap:16 lg:gap-12 md:gap-6 sm:gap-4 ml-0 mr-auto">
               <div className="flex h-16 items-center justify-start underline-hover-effect">
-                <p className="qs-bold font-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p
+                  onClick={aboutMeScroll}
+                  className="qs-bold font-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
                   VỀ TÔI
                 </p>
               </div>
