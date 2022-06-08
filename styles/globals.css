@@ -62,6 +62,47 @@
     url(/fonts/DancingScript/DancingScript-Bold.ttf) format("truetype");
 }
 
+/* setup poppins font */
+
+@font-face {
+  font-family: "Poppins-thin";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Poppins-thin"),
+    url(/fonts/Poppins/Poppins-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-medium";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Poppins-meidum"),
+    url(/fonts/Poppins/Poppins-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Poppins-SemiBold"),
+    url(/fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+}
+
+.pp-thin {
+  font-family: "Poppins-thin";
+}
+
+.pp-medium {
+  font-family: "Poppins-medium";
+}
+
+.pp-bold {
+  font-family: "Poppins-SemiBold";
+}
+
 .ds-regular {
   font-family: "DancingScript-regular";
 }

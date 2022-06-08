@@ -4,6 +4,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import ProfileIntro from "../components/ProfileIntro";
 import AboutMe from "../components/AboutMe";
+import Experience from "../components/Experience";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -22,6 +23,13 @@ const Home: NextPage = () => {
     }
   };
 
+  const [isDiscoverd, setIsDiscovered] = React.useState(false);
+
+  const userDiscoverd = () => {
+    setIsDiscovered(true);
+    setTimeout(aboutMeScroll, 300);
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-neutral-800">
       <Head>
@@ -32,8 +40,13 @@ const Home: NextPage = () => {
       {isMounted && (
         <React.Fragment>
           <Navbar aboutMeScroll={aboutMeScroll} />
-          <ProfileIntro />
-          <AboutMe aboutMeRef={aboutMeRef} />
+          <ProfileIntro userDiscoverd={userDiscoverd} />
+          {isDiscoverd && (
+            <React.Fragment>
+              <AboutMe aboutMeRef={aboutMeRef} />
+              <Experience />
+            </React.Fragment>
+          )}
         </React.Fragment>
       )}
     </div>

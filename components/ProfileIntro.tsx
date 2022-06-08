@@ -5,9 +5,13 @@ import { useMediaQuery } from "react-responsive";
 
 // import modules from local
 
-type profileIntroProps = {};
+type profileIntroProps = {
+  userDiscoverd: any;
+};
 
-const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
+const ProfileIntro: FunctionComponent<profileIntroProps> = ({
+  userDiscoverd,
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   return (
     <React.Fragment>
@@ -18,7 +22,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
             minHeight: "100vh",
           }}
         >
-          <div className="w-full h-full bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-500 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-8">
+          <div className="w-full h-full bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-300 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-8">
             <div className="grid grid-rows-2 grid-flow-col md:gap-10 sm:gap-4 gap-0 items-center justify-center">
               <div className="flex justify-center h-fit">
                 <div className="w-fit p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl">
@@ -29,31 +33,33 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
                 <div className="flex items-start justify-center">
                   <div className="md:px-20 sm:px-10 px-5">
                     <p className="ds-bold md:text-6xl sm:text-6xl text-4xl text-sky-700 mb-4">
-                      Chào bạn !,
+                      Hello !,
                     </p>
                     <p className="ds-bold md:text-4xl sm:text-4xl text-2xl text-slate-800 dark:text-slate-100 mb-2">
-                      Tôi là Kiệt. Tên đầy đủ của tôi là Nguyễn Hàn Mạnh Kiệt.
+                      I&apos;m Kiet. My full name is Nguyen Han Manh Kiet.
                     </p>
                     <p className="ds-bold md:text-2xl sm:text-2xl text-xl text-slate-800 dark:text-slate-100 mb-2">
-                      Hiện nay tôi đang là một{" "}
+                      Currently I am a{" "}
                       <span className="text-orange-600">
                         Front-end developer
                       </span>
-                      . Công việc chính của tôi là tạo nên những website có phần
-                      UI/UX tốt nhất và thân thiện với người dùng, giúp cho
-                      người dùng có được những trải nghiệm tuyệt vời nhất trong
-                      quá trình sử dụng.
+                      . My main job is to create websites with the best UI / UX
+                      and user-friendly, helping users get the best experience
+                      during use.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="flex justify-center items-end w-full md:mt-20 sm:mt-16 mt-8">
-              <div className="md:py-2 sm:py-2 py-2 md:px-4 sm:px-4 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300">
-                <p className="qs-regular md:text-lg sm:text-lg text-md">
-                  Tìm hiểu thêm
+              <button
+                onClick={userDiscoverd}
+                className="md:py-2 sm:py-2 py-2 md:px-4 sm:px-4 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300"
+              >
+                <p className="pp-thin md:text-lg sm:text-lg text-sm">
+                  DISCOVER NOW
                 </p>
-              </div>
+              </button>
             </div>
           </div>
         </div>
@@ -61,16 +67,15 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
         <div className="w-full h-screen grid grid-cols-3 gap-10 items-center justify-center bg-gradient-to-r from-cyan-100 dark:from-stone-700 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 pt-32 pb-4 xl:px-40 lg:px-20 md:px-20 sm:px-10">
           <div className="flex items-start justify-end col-span-2">
             <div className="">
-              <p className="ds-bold text-8xl text-sky-700 mb-4">Chào bạn !,</p>
+              <p className="ds-bold text-8xl text-sky-700 mb-4">Hello !,</p>
               <p className="ds-bold text-4xl text-slate-800 dark:text-slate-100 mb-2">
-                Tôi là Kiệt. Tên đầy đủ của tôi là Nguyễn Hàn Mạnh Kiệt.
+                I&apos;m Kiet. My full name is Nguyen Han Manh Kiet.
               </p>
               <p className="ds-bold text-2xl text-slate-800 dark:text-slate-100 mb-2">
-                Hiện nay tôi đang là một{" "}
-                <span className="text-orange-600">Front-end developer</span>.
-                Công việc chính của tôi là tạo nên những website có phần UI/UX
-                tốt nhất và thân thiện với người dùng, giúp cho người dùng có
-                được những trải nghiệm tuyệt vời nhất trong quá trình sử dụng.
+                Currently I am a{" "}
+                <span className="text-orange-600">Front-end developer</span>. My
+                main job is to create websites with the best UI / UX and
+                user-friendly, helping users get the best experience during use.
               </p>
             </div>
           </div>
@@ -80,9 +85,12 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({}) => {
             </div>
           </div>
           <div className="flex justify-center items-end w-full col-span-3">
-            <div className="py-2 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300">
-              <p className="qs-regular text-lg">Tìm hiểu thêm</p>
-            </div>
+            <button
+              onClick={userDiscoverd}
+              className="py-2 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300"
+            >
+              <p className="pp-thin text-md">DISCOVER NOW</p>
+            </button>
           </div>
         </div>
       )}
