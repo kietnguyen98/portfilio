@@ -63,7 +63,7 @@ const BackgroundSwitch: FunctionComponent<backgroundSwitchProps> = ({}) => {
         alt="sun icon"
         quality={100}
       />{" "}
-      <span className="w-max qs-regular text-slate-900 dark:text-gray-100">
+      <span className="w-max pp-thin text-slate-900 dark:text-gray-100 text-sm">
         {isDark ? "dark mode" : "light mode"}
       </span>
     </div>
