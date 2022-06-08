@@ -16,7 +16,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const show = window.scrollY > 64;
+      const show = window.scrollY > 0;
       if (show) {
         setNavBackground("backdrop-blur bg-white/5 shadow-xl");
       } else {
@@ -34,56 +34,53 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
   return (
     <React.Fragment>
       {isMobile ? (
-        <div>
-          <div
-            className={
-              `w-full fixed top-0 transition duration-300 ${
-                isMenuDropdown ? "h-64" : "h-16"
-              } ` +
-              (isMenuDropdown ? "backdrop-blur bg-white/5" : navBackground)
-            }
-          >
-            <div className="w-full h-16 flex md:px-20 sm:px-10 px-5">
-              <div className="flex items-center justify-start mr-auto ml-0">
-                <MenuButton
-                  toggleDropdown={() => setIsMenuDropdown(!isMenuDropdown)}
-                />
+        <div
+          className={
+            `w-full fixed top-0 transition duration-300 ${
+              isMenuDropdown ? "h-64" : "h-16"
+            } ` + (isMenuDropdown ? "backdrop-blur bg-white/5" : navBackground)
+          }
+        >
+          <div className="w-full h-16 flex md:px-20 sm:px-10 px-5">
+            <div className="flex items-center justify-start mr-auto ml-0">
+              <MenuButton
+                toggleDropdown={() => setIsMenuDropdown(!isMenuDropdown)}
+              />
+            </div>
+            <div className="flex items-center justify-end ml-auto mr-0">
+              <BackgroundSwitch />
+            </div>
+          </div>
+          {isMenuDropdown && (
+            <div className="w-full h-48 flex flex-col items-center justify-center shadow-xl">
+              <div className="flex h-10 items-center justify-start underline-hover-effect">
+                <p
+                  onClick={() => {
+                    setIsMenuDropdown(false);
+                    aboutMeScroll();
+                  }}
+                  className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
+                  ABOUT ME
+                </p>
               </div>
-              <div className="flex items-center justify-end ml-auto mr-0">
-                <BackgroundSwitch />
+              <div className="flex h-10 items-center justify-start underline-hover-effect">
+                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                  EXPERIENCE
+                </p>
+              </div>
+              <div className="flex h-10 items-center justify-start underline-hover-effect">
+                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                  SKILLS
+                </p>
+              </div>
+              <div className="flex h-10 items-center justify-start underline-hover-effect">
+                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                  CONTACT
+                </p>
               </div>
             </div>
-            {isMenuDropdown && (
-              <div className="w-full h-48 flex flex-col items-center justify-center shadow-xl">
-                <div className="flex h-10 items-center justify-start underline-hover-effect">
-                  <p
-                    onClick={() => {
-                      setIsMenuDropdown(false);
-                      aboutMeScroll();
-                    }}
-                    className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
-                  >
-                    ABOUT ME
-                  </p>
-                </div>
-                <div className="flex h-10 items-center justify-start underline-hover-effect">
-                  <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
-                    EXPERIENCE
-                  </p>
-                </div>
-                <div className="flex h-10 items-center justify-start underline-hover-effect">
-                  <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
-                    SKILLS
-                  </p>
-                </div>
-                <div className="flex h-10 items-center justify-start underline-hover-effect">
-                  <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
-                    CONTACT
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+          )}
         </div>
       ) : (
         <div
