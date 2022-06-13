@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "ToToDay",
+    "type": "company",
+    "position": "Front-end Dev",
+    "image": "/images/projects/totoday.png",
+    "description": "Made for Totoday. using Technologies such as ReactJs (create-react-app), Material UI for components styling and Gatsby as React Framework.",
+    "link": "https://totoday.mltechsoft.com/"
+  },
+  {
+    "id": 2,
+    "name": "Vietchudep",
+    "type": "company",
+    "position": "FullStack Dev",
+    "image": "/images/projects/vietchudep.png",
+    "description": "Made for IDP and HDDTW. using Technologies such as ReactJs (create-react-app), Material UI for Front-end and NodeJs, ExpressJs with Sequelize for the backend and MySql for the DB.",
+    "link": "https://vietchudep.lamviectot.edu.vn/"
+  },
+  {
+    "id": 3,
+    "name": "Lamviectot",
+    "type": "company",
+    "position": "FullStack Dev",
+    "image": "/images/projects/lvt.png",
+    "description": "Made for IDP and HDDTW. using Technologies such as ReactJs (create-react-app), Material UI and NextJs as React FrameWork.",
+    "link": "https://lvt-staging.mltechsoft.com/"
+  },
+  {
+    "id": 4,
+    "name": "cung kun san qua tet ket yeu thuong",
+    "type": "company",
+    "position": "Front-end Dev",
+    "image": "/images/projects/cungkun.png",
+    "description": "Made for IDP. using Technologies such as ReactJs (create-react-app), Material UI and NextJs as React FrameWork.",
+    "link": "https://cungkun-sanquatet-ketyeuthuong.idp.vn/"
+  },
+  {
+    "id": 5,
+    "name": "cung kun lam viec tot",
+    "type": "company",
+    "position": "Front-end Dev",
+    "image": "/images/projects/idplvt.png",
+    "description": "Made for IDP. using Technologies such as ReactJs (create-react-app), Material UI and NextJs as React FrameWork.",
+    "link": "https://www.lamviectot.edu.vn/auth/login"
+  }
+]

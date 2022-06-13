@@ -5,14 +5,24 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 // import modules from local
 
-type projectCardProps = {};
+type projectCardProps = {
+  data: {
+    id: number;
+    name: string;
+    type: string;
+    position: string;
+    image: string;
+    description: string;
+    link: string;
+  };
+};
 
-const ProjectCard: FunctionComponent<projectCardProps> = ({}) => {
+const ProjectCard: FunctionComponent<projectCardProps> = ({ data }) => {
   const [isCardHover, setIsCardHover] = React.useState(false);
   const isMobile = useMediaQuery({ maxWidth: 900 });
 
-  const viewWebsite = () => {
-    window.open("https://vietchudep.lamviectot.edu.vn/");
+  const viewWebsite = (link: string) => {
+    window.open(link);
   };
 
   return (
@@ -20,14 +30,14 @@ const ProjectCard: FunctionComponent<projectCardProps> = ({}) => {
       <div
         onMouseEnter={() => setIsCardHover(true)}
         onMouseLeave={() => setIsCardHover(false)}
-        style={{ paddingTop: "75%" }}
-        className="w-full relative bg-[url('/images/projects/vietchudep.png')] bg-cover bg-no-repeat bg-center rounded-md shadow-lg hover:shadow-2xl transition duration-500"
+        style={{ paddingTop: "75%", backgroundImage: `url(${data.image})` }}
+        className="w-full relative bg-cover bg-no-repeat bg-center rounded-md shadow-lg hover:shadow-2xl transition duration-700"
       >
         {isCardHover && (
-          <div className="bg-transparent hover:bg-slate-800 hover:transition-all hover:duration-500 ease-in-out opacity-90 rounded-lg absolute flex items-center justify-center top-0 left-0 w-full h-full ">
+          <div className="bg-transparent hover:bg-slate-900 hover:transition-all hover:duration-700 ease-in-out opacity-90 rounded-lg absolute flex items-center justify-center top-0 left-0 w-full h-full ">
             <div className="relative group">
               <p
-                onClick={viewWebsite}
+                onClick={() => viewWebsite(data.link)}
                 className="text-sky-200 pp-thin text-md cursor-pointer"
               >
                 View website <FontAwesomeIcon icon={faEye} />
@@ -39,24 +49,26 @@ const ProjectCard: FunctionComponent<projectCardProps> = ({}) => {
       </div>
       <div className="flex flex-col gap-2">
         <p className="pp-medium text-slate-700 dark:text-slate-300 uppercase md:text-md text-sm">
-          website vietchudep{" "}
+          website {data.name}{" "}
           {isMobile && (
             <span>
               -{" "}
               <span
-                onClick={viewWebsite}
+                onClick={() => viewWebsite(data.link)}
                 className="pp-medium capitalize text-sky-700 dark:text-sky-400 cursor-pointer"
               >
-                View website
+                View website <FontAwesomeIcon icon={faEye} />
               </span>
             </span>
           )}
         </p>
+        <p className="pp-medium text-slate-500 dark:text-slate-200 text-sm">
+          type:{" "}
+          {data.type === "company" ? "Company's project" : "Personal's project"}
+          , role: {data.position}
+        </p>
         <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
-          Company&apos;s project <br />
-          Made for IDP and HDDTW. using Technologies such as ReactJs
-          (create-react-app) for Front-end and NodeJs, ExpressJs with Sequelize
-          for the backend and MySql for the DB.
+          {data.description}
         </p>
       </div>
     </div>
