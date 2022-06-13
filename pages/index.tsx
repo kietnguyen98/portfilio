@@ -12,6 +12,8 @@ const Home: NextPage = () => {
   React.useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  // scrolling about me section
   const aboutMeRef = React.useRef<HTMLInputElement>(null);
   const aboutMeScroll = () => {
     if (aboutMeRef?.current) {
@@ -23,11 +25,27 @@ const Home: NextPage = () => {
     }
   };
 
+  // scrolling experience section
+  const experienceRef = React.useRef<HTMLInputElement>(null);
+  const experienceScroll = () => {
+    if (experienceRef?.current) {
+      const y =
+        experienceRef?.current?.getBoundingClientRect().top +
+        window.pageYOffset +
+        -64;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const [isDiscoverd, setIsDiscovered] = React.useState(false);
 
   const userDiscoverd = () => {
     setIsDiscovered(true);
-    setTimeout(aboutMeScroll, 300);
+    if (isDiscoverd) {
+      aboutMeScroll();
+    } else {
+      setTimeout(aboutMeScroll, 300);
+    }
   };
 
   return (
@@ -39,12 +57,15 @@ const Home: NextPage = () => {
       </Head>
       {isMounted && (
         <React.Fragment>
-          <Navbar aboutMeScroll={aboutMeScroll} />
+          <Navbar
+            aboutMeScroll={aboutMeScroll}
+            experienceScroll={experienceScroll}
+          />
           <ProfileIntro userDiscoverd={userDiscoverd} />
           {isDiscoverd && (
             <React.Fragment>
               <AboutMe aboutMeRef={aboutMeRef} />
-              <Experience />
+              <Experience experienceRef={experienceRef} />
             </React.Fragment>
           )}
         </React.Fragment>

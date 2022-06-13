@@ -8,9 +8,13 @@ import MenuButton from "./MenuButton";
 
 type NavbarProps = {
   aboutMeScroll: any;
+  experienceScroll: any;
 };
 
-const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
+const Navbar: FunctionComponent<NavbarProps> = ({
+  aboutMeScroll,
+  experienceScroll,
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const [navBackground, setNavBackground] = React.useState("bg-transparent");
 
@@ -36,7 +40,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
       {isMobile ? (
         <div
           className={
-            `w-full fixed top-0 transition duration-300 ${
+            `w-full fixed z-50 top-0 transition duration-300 ${
               isMenuDropdown ? "h-64" : "h-16"
             } ` + (isMenuDropdown ? "backdrop-blur bg-white/5" : navBackground)
           }
@@ -59,23 +63,29 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
                     setIsMenuDropdown(false);
                     aboutMeScroll();
                   }}
-                  className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                  className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
                 >
                   ABOUT ME
                 </p>
               </div>
               <div className="flex h-10 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p
+                  onClick={() => {
+                    setIsMenuDropdown(false);
+                    experienceScroll();
+                  }}
+                  className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
                   EXPERIENCE
                 </p>
               </div>
               <div className="flex h-10 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
                   SKILLS
                 </p>
               </div>
               <div className="flex h-10 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-100 hover:text-slate-50 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
                   CONTACT
                 </p>
               </div>
@@ -85,7 +95,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
       ) : (
         <div
           className={
-            "w-full fixed top-0 h-16 flex transition duration-300 items-center " +
+            "w-full fixed z-50 top-0 h-16 flex transition duration-300 items-center " +
             navBackground
           }
         >
@@ -100,7 +110,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({ aboutMeScroll }) => {
                 </p>
               </div>
               <div className="flex h-16 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p
+                  onClick={experienceScroll}
+                  className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
                   EXPERIENCE
                 </p>
               </div>
