@@ -25,11 +25,11 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
               </p>
               <div
                 style={{ width: "60%" }}
-                className="bg-sky-400 h-0.5 mt-2"
+                className="bg-sky-400 h-1 mt-2"
               ></div>
             </div>
             <div className="w-fit">
-              <p className="pp-medium text-slate-800 dark:text-slate-300 text-lg uppercase">
+              <p className="pp-medium text-slate-700 dark:text-slate-300 text-lg uppercase">
                 Here is some of my personal details
               </p>
             </div>
@@ -56,8 +56,8 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
             <div className="w-fit">
               <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
                 Currently I am looking for new challenges in new companies with
-                the desire to forge myself in a dynamic environment dynamic,
-                creative.
+                the desire to forge myself in a dynamic and creative
+                environment.
               </p>
             </div>
             <div className="w-fit">
@@ -89,11 +89,11 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
                 </p>
                 <div
                   style={{ width: "60%" }}
-                  className="bg-sky-400 h-0.5 mt-2"
+                  className="bg-sky-400 h-1 mt-2"
                 ></div>
               </div>
               <div className="w-fit">
-                <p className="pp-medium text-slate-800 dark:text-slate-300 text-lg uppercase">
+                <p className="pp-medium text-slate-700 dark:text-slate-300 text-lg uppercase">
                   Here is some of my personal details
                 </p>
               </div>
@@ -110,8 +110,8 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
               <div className="w-fit">
                 <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
                   Currently I am looking for new challenges in new companies
-                  with the desire to forge myself in a dynamic environment
-                  dynamic, creative.
+                  with the desire to forge myself in a dynamic and creative
+                  environment.
                 </p>
               </div>
               <div className="w-fit">
