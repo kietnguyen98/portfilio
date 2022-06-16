@@ -58,7 +58,7 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-20 lg:gap-16 md:gap-12 gap-8 items-center justify-center w-fit">
+            <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-20 lg:gap-16 md:gap-16 gap-12 items-center justify-center w-fit">
               {skillsData?.length > 0 &&
                 skillsData.map((skillData, index) => (
                   <div
@@ -74,7 +74,7 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="w-fit">
+            <div className="w-fit xl:px-40 lg:px-32 md:px-24 sm:px-12 px-8">
               <p className="pp-thin text-lg text-slate-700 dark:text-slate-200 text-center">
                 In addition, I also have some experience in using JavaScript
                 libraries like Reactjs, Jquery and other programming languages
