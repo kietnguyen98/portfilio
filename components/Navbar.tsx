@@ -9,11 +9,13 @@ import MenuButton from "./MenuButton";
 type NavbarProps = {
   aboutMeScroll: any;
   experienceScroll: any;
+  skillsScroll: any;
 };
 
 const Navbar: FunctionComponent<NavbarProps> = ({
   aboutMeScroll,
   experienceScroll,
+  skillsScroll,
 }) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const [navBackground, setNavBackground] = React.useState("bg-transparent");
@@ -80,7 +82,13 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 </p>
               </div>
               <div className="flex h-10 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p
+                  onClick={() => {
+                    setIsMenuDropdown(false);
+                    skillsScroll();
+                  }}
+                  className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
                   SKILLS
                 </p>
               </div>
@@ -118,7 +126,10 @@ const Navbar: FunctionComponent<NavbarProps> = ({
                 </p>
               </div>
               <div className="flex h-16 items-center justify-start underline-hover-effect">
-                <p className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max">
+                <p
+                  onClick={skillsScroll}
+                  className="pp-medium hover:font-bold text-slate-600 hover:text-slate-900 dark:text-slate-100 dark:hover:text-slate-50 text-sm cursor-pointer w-max"
+                >
                   SKILLS
                 </p>
               </div>
