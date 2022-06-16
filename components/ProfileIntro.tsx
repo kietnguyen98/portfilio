@@ -76,9 +76,21 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({
                   onClick={isDiscoverd ? userUnDiscoverd : userDiscoverd}
                   className="md:py-2 sm:py-2 py-2 md:px-4 sm:px-4 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300"
                 >
-                  <p className="pp-thin md:text-lg sm:text-lg text-sm">
-                    SHOW MORE
-                  </p>
+                  {isDiscoverd ? (
+                    <p className="pp-thin text-md">
+                      SHOW LESS{" "}
+                      <FontAwesomeIcon icon={faCaretUp} size="lg" fixedWidth />
+                    </p>
+                  ) : (
+                    <p className="pp-thin text-md">
+                      SHOW MORE{" "}
+                      <FontAwesomeIcon
+                        icon={faCaretDown}
+                        size="lg"
+                        fixedWidth
+                      />
+                    </p>
+                  )}
                 </button>
               </div>
             </div>
