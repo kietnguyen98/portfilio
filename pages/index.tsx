@@ -14,6 +14,11 @@ const Home: NextPage = () => {
     setIsMounted(true);
   }, []);
 
+  // scrolling to Top
+  const toTopScroll = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   // scrolling about me section
   const aboutMeRef = React.useRef<HTMLInputElement>(null);
   const aboutMeScroll = () => {
@@ -53,11 +58,22 @@ const Home: NextPage = () => {
   const [isDiscoverd, setIsDiscovered] = React.useState(false);
 
   const userDiscoverd = () => {
-    setIsDiscovered(true);
+    if (!isDiscoverd) {
+      setIsDiscovered(true);
+    }
     if (isDiscoverd) {
       aboutMeScroll();
     } else {
       setTimeout(aboutMeScroll, 300);
+    }
+  };
+
+  const userUnDiscoverd = () => {
+    toTopScroll();
+    if (isDiscoverd) {
+      setTimeout(() => {
+        setIsDiscovered(false);
+      }, 300);
     }
   };
 
@@ -75,7 +91,11 @@ const Home: NextPage = () => {
             experienceScroll={experienceScroll}
             skillsScroll={skillsScroll}
           />
-          <ProfileIntro userDiscoverd={userDiscoverd} />
+          <ProfileIntro
+            userDiscoverd={userDiscoverd}
+            userUnDiscoverd={userUnDiscoverd}
+            isDiscoverd={isDiscoverd}
+          />
           {isDiscoverd && (
             <React.Fragment>
               <AboutMe aboutMeRef={aboutMeRef} />
