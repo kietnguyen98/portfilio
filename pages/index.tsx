@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import ProfileIntro from "../components/ProfileIntro";
 import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
+import Skills from "../components/Skills";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -37,6 +38,18 @@ const Home: NextPage = () => {
     }
   };
 
+  // scrolling skills section
+  const skillsRef = React.useRef<HTMLInputElement>(null);
+  const skillsScroll = () => {
+    if (skillsRef?.current) {
+      const y =
+        skillsRef?.current?.getBoundingClientRect().top +
+        window.pageYOffset +
+        -64;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   const [isDiscoverd, setIsDiscovered] = React.useState(false);
 
   const userDiscoverd = () => {
@@ -60,12 +73,14 @@ const Home: NextPage = () => {
           <Navbar
             aboutMeScroll={aboutMeScroll}
             experienceScroll={experienceScroll}
+            skillsScroll={skillsScroll}
           />
           <ProfileIntro userDiscoverd={userDiscoverd} />
           {isDiscoverd && (
             <React.Fragment>
               <AboutMe aboutMeRef={aboutMeRef} />
               <Experience experienceRef={experienceRef} />
+              <Skills skillsRef={skillsRef} />
             </React.Fragment>
           )}
         </React.Fragment>

@@ -31,21 +31,21 @@ const ProjectCard: FunctionComponent<projectCardProps> = ({ data }) => {
         onMouseEnter={() => setIsCardHover(true)}
         onMouseLeave={() => setIsCardHover(false)}
         style={{ paddingTop: "75%", backgroundImage: `url(${data.image})` }}
-        className="w-full relative bg-cover bg-no-repeat bg-center rounded-md shadow-lg hover:shadow-2xl transition duration-700"
+        className="w-full group relative bg-cover bg-no-repeat bg-center shadow-lg hover:shadow-2xl transition-all duration-500 top-0 hover:-top-4"
       >
-        {isCardHover && (
-          <div className="bg-transparent hover:bg-slate-900 hover:transition-all hover:duration-700 ease-in-out opacity-90 rounded-lg absolute flex items-center justify-center top-0 left-0 w-full h-full ">
-            <div className="relative group">
+        <div className="bg-transparent hover:bg-sky-800 hover:transition-all hover:duration-500 ease-in-out opacity-90 absolute flex items-center justify-center top-0 left-0 w-full h-full ">
+          <div className="relative">
+            {isCardHover && (
               <p
                 onClick={() => viewWebsite(data.link)}
                 className="text-sky-200 pp-thin text-md cursor-pointer"
               >
                 View website <FontAwesomeIcon icon={faEye} />
               </p>
-              <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-sky-200 group-hover:w-full group-hover:transition-all group-hover:duration-500"></span>
-            </div>
+            )}
+            <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-sky-200 group-hover:w-full group-hover:transition-all group-hover:duration-700 rounded-md"></span>
           </div>
-        )}
+        </div>
       </div>
       <div className="flex flex-col gap-2">
         <p className="pp-medium text-slate-700 dark:text-slate-300 uppercase md:text-md text-sm">

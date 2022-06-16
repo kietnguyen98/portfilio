@@ -21,7 +21,10 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
               working experience
             </p>
             <div className="w-full flex justify-center mt-2">
-              <div style={{ width: "60%" }} className="bg-sky-400 h-1"></div>
+              <div
+                style={{ width: "60%" }}
+                className="bg-sky-400 h-1 rounded-md"
+              ></div>
             </div>
           </div>
         </div>
