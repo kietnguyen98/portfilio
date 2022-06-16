@@ -1,16 +1,22 @@
 // import modules from library
 import React, { FunctionComponent } from "react";
-import Image from "next/image";
 import { useMediaQuery } from "react-responsive";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 // import modules from local
 
 type profileIntroProps = {
   userDiscoverd: any;
+  userUnDiscoverd: any;
+  isDiscoverd: boolean;
 };
 
 const ProfileIntro: FunctionComponent<profileIntroProps> = ({
   userDiscoverd,
+  userUnDiscoverd,
+  isDiscoverd,
 }) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
   const isSmallWidthMobile = useMediaQuery({ maxWidth: 380 });
@@ -67,11 +73,11 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({
               </div>
               <div className="flex justify-center items-end w-full md:mt-20 sm:mt-16 mt-16">
                 <button
-                  onClick={userDiscoverd}
+                  onClick={isDiscoverd ? userUnDiscoverd : userDiscoverd}
                   className="md:py-2 sm:py-2 py-2 md:px-4 sm:px-4 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300"
                 >
                   <p className="pp-thin md:text-lg sm:text-lg text-sm">
-                    DISCOVER NOW
+                    SHOW MORE
                   </p>
                 </button>
               </div>
@@ -103,10 +109,20 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({
           </div>
           <div className="flex justify-center items-end w-full col-span-3">
             <button
-              onClick={userDiscoverd}
+              onClick={isDiscoverd ? userUnDiscoverd : userDiscoverd}
               className="py-2 px-4 text-slate-800 dark:text-slate-50 border-solid border-1 border-slate-800 dark:border-slate-50 dark:hover:text-slate-800 hover:border-none cursor-pointer rounded-lg bg-inherit hover:bg-slate-50 duration-300"
             >
-              <p className="pp-thin text-md">DISCOVER NOW</p>
+              {isDiscoverd ? (
+                <p className="pp-thin text-md">
+                  SHOW LESS{" "}
+                  <FontAwesomeIcon icon={faCaretUp} size="lg" fixedWidth />
+                </p>
+              ) : (
+                <p className="pp-thin text-md">
+                  SHOW MORE{" "}
+                  <FontAwesomeIcon icon={faCaretDown} size="lg" fixedWidth />
+                </p>
+              )}
             </button>
           </div>
         </div>
