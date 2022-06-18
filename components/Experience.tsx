@@ -4,6 +4,7 @@ import React, { FunctionComponent } from "react";
 // import modules from local
 import ProjectCard from "./ProjectCard";
 import projectData from "../data/project-data.json";
+import CompanyCard from "./CompanyCard";
 
 type experienceProps = {
   experienceRef: any;
@@ -35,6 +36,14 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
             accumulated a lot of experience and knowledge in some programming
             languages, frameworks or other software.
           </p>
+        </div>
+        <div className="w-full mt-8 xl:px-24 lg:px-20 md:px-16 sm:px-12 px-8">
+          <CompanyCard
+            position="Front-end Developer"
+            companyName="MLTechSoft Co"
+            duration="May 2021 - May 2022"
+            description="The company is a startup in the information technology industry that provides a digital transformation platform for manufacturing businesses"
+          />
         </div>
         <div className="md:mt-16 sm:mt-12 mt-8 xl:px-24 lg:px-20 md:px-16 sm:px-12 px-8 grid xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 gap-16 items-start justify-center">
           {projectData?.length > 0 &&
