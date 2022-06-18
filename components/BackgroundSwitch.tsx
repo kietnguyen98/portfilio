@@ -52,7 +52,7 @@ const BackgroundSwitch: FunctionComponent<backgroundSwitchProps> = ({}) => {
     }
   };
   return (
-    <div
+    <button
       onClick={switchMode}
       className="flex items-center justify-start gap-2 px-2 py-1 rounded-xl border-solid border-2 border-sky-500 cursor-pointer bg-amber-50 dark:bg-sky-900"
     >
@@ -66,7 +66,7 @@ const BackgroundSwitch: FunctionComponent<backgroundSwitchProps> = ({}) => {
       <span className="w-max pp-thin text-slate-900 dark:text-gray-100 text-sm">
         {isDark ? "dark mode" : "light mode"}
       </span>
-    </div>
+    </button>
   );
 };
 

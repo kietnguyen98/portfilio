@@ -35,36 +35,68 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
               </p>
             </div>
             <div className="w-full">
-              <div className="flex justify-center xl:px-10 lg:px-8 md:px-6 sm:px-4 px-4 pt-2 pb-8">
-                <div
-                  style={{
-                    width: "100%",
-                    paddingTop: `${100}%`,
-                  }}
-                  className="bg-[url('/images/profile/graduation.png')] bg-cover bg-no-repeat bg-center rounded-2xl border-solid border-6 border-white shadow-xl"
-                ></div>
-              </div>
+              <AnimationOnScroll
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOut"
+                duration={1.5}
+                animateOnce={true}
+              >
+                <div className="flex justify-center xl:px-10 lg:px-8 md:px-6 sm:px-4 px-4 pt-2 pb-8">
+                  <div
+                    style={{
+                      width: "100%",
+                      paddingTop: `${100}%`,
+                    }}
+                    className="bg-[url('/images/profile/graduation.png')] bg-cover bg-no-repeat bg-center rounded-2xl border-solid border-6 border-white shadow-xl"
+                  ></div>
+                </div>
+              </AnimationOnScroll>
             </div>
             <div className="w-fit">
-              <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
-                I started studying at Ho Chi Minh City University of Technology
-                from 2017 to 2022, my major is Computer Science and Engineering.
-                After graduation, I work full-time job at MLTechSoft Co., Ltd
-                Front-end Developer, taking on the role of main developer in the
-                front-end section in many projects of my company.
-              </p>
+              <AnimationOnScroll
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOutOut"
+                animateOnce={true}
+                offset={50}
+                duration={1.5}
+              >
+                <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
+                  I started studying at Ho Chi Minh City University of
+                  Technology from 2017 to 2022, my major is Computer Science and
+                  Engineering. After graduation, I work full-time job at
+                  MLTechSoft Co., Ltd Front-end Developer, taking on the role of
+                  main developer in the front-end section in many projects of my
+                  company.
+                </p>
+              </AnimationOnScroll>
             </div>
             <div className="w-fit">
-              <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
-                Currently I am looking for new challenges in new companies with
-                the desire to forge myself in a dynamic and creative
-                environment.
-              </p>
+              <AnimationOnScroll
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOutOut"
+                animateOnce={true}
+                offset={50}
+                duration={1.5}
+              >
+                <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
+                  Currently I am looking for new challenges in new companies
+                  with the desire to forge myself in a dynamic and creative
+                  environment.
+                </p>
+              </AnimationOnScroll>
             </div>
             <div className="w-fit">
-              <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl">
-                <p className="pp-thin text-slate-100 text-sm">Contact me</p>
-              </button>
+              <AnimationOnScroll
+                animateIn="animate__fadeIn"
+                animateOut="animate__fadeOutOut"
+                animateOnce={true}
+                offset={50}
+                duration={1.5}
+              >
+                <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl">
+                  <p className="pp-thin text-slate-100 text-sm">Contact me</p>
+                </button>
+              </AnimationOnScroll>
             </div>
           </div>
         </div>
