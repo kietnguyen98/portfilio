@@ -1,5 +1,7 @@
 // import modules from library
 import React, { FunctionComponent } from "react";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
 // import modules from local
 import ProjectCard from "./ProjectCard";
 import projectData from "../data/project-data.json";
@@ -12,7 +14,7 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
   return (
     <div
       ref={experienceRef}
-      className="w-full h-full bg-slate-50 dark:bg-neutral-800 pt-12 pb-8 xl:px-24 lg:px-20 md:px-16 sm:px-8 px-4"
+      className="w-full h-full bg-slate-50 dark:bg-neutral-800 pt-16 pb-16 xl:px-24 lg:px-20 md:px-16 sm:px-8 px-4"
     >
       <div className="w-full flex flex-col gap-8">
         <div className="w-full flex justify-center">
@@ -39,7 +41,9 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
           {projectData?.length > 0 &&
             projectData.map((data, index) => (
               <div key={index + 1}>
-                <ProjectCard data={data} />
+                <AnimationOnScroll animateIn="animate__fadeInUp" duration={1.5}>
+                  <ProjectCard data={data} />
+                </AnimationOnScroll>
               </div>
             ))}
         </div>
