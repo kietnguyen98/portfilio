@@ -6,6 +6,7 @@ import ProfileIntro from "../components/ProfileIntro";
 import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
+import ContactMe from "../components/ContactMe";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -101,6 +102,7 @@ const Home: NextPage = () => {
               <AboutMe aboutMeRef={aboutMeRef} />
               <Experience experienceRef={experienceRef} />
               <Skills skillsRef={skillsRef} />
+              <ContactMe />
             </React.Fragment>
           )}
         </React.Fragment>

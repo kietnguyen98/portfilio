@@ -1,6 +1,5 @@
 // import modules from library
 import React, { FunctionComponent } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
 
 // import modules from local
 import ProjectCard from "./ProjectCard";
@@ -41,9 +40,7 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
           {projectData?.length > 0 &&
             projectData.map((data, index) => (
               <div key={index + 1}>
-                <AnimationOnScroll animateIn="animate__fadeInUp" duration={1.5}>
-                  <ProjectCard data={data} />
-                </AnimationOnScroll>
+                <ProjectCard data={data} />
               </div>
             ))}
         </div>
