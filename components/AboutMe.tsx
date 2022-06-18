@@ -93,7 +93,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
                 offset={50}
                 duration={1.5}
               >
-                <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl">
+                <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-lg hover:shadow-2xl shadow-indigo-500/40">
                   <p className="pp-thin text-slate-100 text-sm">Contact me</p>
                 </button>
               </AnimationOnScroll>
@@ -166,7 +166,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
                   </p>
                 </div>
                 <div className="w-fit">
-                  <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl">
+                  <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-md hover:shadow-xl shadow-indigo-500/40">
                     <p className="pp-thin text-slate-100 text-sm">Contact me</p>
                   </button>
                 </div>
