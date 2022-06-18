@@ -1,5 +1,6 @@
 // import modules from library
 import React, { FunctionComponent } from "react";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 // import modules from local
 import SkillCard from "./SkillCard";
@@ -74,13 +75,21 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
             </div>
           </div>
           <div className="w-full flex justify-center">
-            <div className="w-fit xl:px-40 lg:px-32 md:px-24 sm:px-12 px-8">
-              <p className="pp-thin text-lg text-slate-700 dark:text-slate-200 text-center">
-                In addition, I also have some experience in using JavaScript
-                libraries like Reactjs, Jquery and other programming languages
-                like C++
-              </p>
-            </div>
+            <AnimationOnScroll
+              animateIn="animate__fadeInUp"
+              duration={1.5}
+              offset={0}
+            >
+              <div className="w-fit xl:px-40 lg:px-32 md:px-24 sm:px-12 px-8">
+                <p className="pp-thin text-md text-slate-700 dark:text-slate-200 text-center">
+                  In addition, I also have some experience in using JavaScript
+                  libraries like Reactjs, Jquery and other programming languages
+                  like C++. My English skills are also quite good as I got
+                  695/990 points in Toeic exam at the end of 2020 so I can read
+                  and understand English documents fine.
+                </p>
+              </div>
+            </AnimationOnScroll>
           </div>
         </div>
       </div>
