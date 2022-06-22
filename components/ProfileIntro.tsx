@@ -51,7 +51,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({
                     duration={2}
                     animateOnce={true}
                   >
-                    <div className="w-fit p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl">
+                    <div className="w-fit p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl shadow-indigo-500/40 dark:shadow-indigo-500/40">
                       <div className="md:h-64 sm:h-56 h-48 md:w-64 sm:w-56 w-48 bg-[url('/images/profile/Avatar.jpg')] bg-cover bg-no-repeat bg-center rounded-full border-solid border-2 border-slate-200"></div>
                     </div>
                   </AnimationOnScroll>
@@ -152,7 +152,7 @@ const ProfileIntro: FunctionComponent<profileIntroProps> = ({
               duration={2}
               animateOnce={true}
             >
-              <div className="p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl">
+              <div className="p-2 rounded-full bg-sky-700 border-solid border-3 border-slate-50 shadow-2xl shadow-indigo-500/40 dark:shadow-indigo-500/40">
                 <div className="xl:h-80 lg:h-64 md:h-56 xl:w-80 lg:w-64 md:w-56 bg-[url('/images/profile/Avatar.jpg')] bg-cover bg-no-repeat bg-center rounded-full border-solid border-2 border-slate-200"></div>
               </div>
             </AnimationOnScroll>

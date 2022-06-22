@@ -11,8 +11,34 @@ import ContactMe from "../components/ContactMe";
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
   const [isMounted, setIsMounted] = React.useState(false);
+  const [isRefNow, setIsRefNow] = React.useState("");
+
   React.useEffect(() => {
     setIsMounted(true);
+
+    const checkRefNow = () => {
+      if (window && aboutMeRef?.current && experienceRef?.current) {
+        const aboutMeOffset =
+          aboutMeRef?.current?.getBoundingClientRect().top +
+          window.pageYOffset +
+          -64;
+        const experienceOffset =
+          experienceRef?.current?.getBoundingClientRect().top +
+          window.pageYOffset +
+          -64;
+        if (
+          window.pageYOffset > aboutMeOffset &&
+          window.pageYOffset &&
+          experienceOffset
+        ) {
+          setIsRefNow("aboutMe");
+        }
+      }
+    };
+    document.addEventListener("scroll", checkRefNow);
+    return () => {
+      document.removeEventListener("scroll", checkRefNow);
+    };
   }, []);
 
   // scrolling to Top
@@ -27,7 +53,8 @@ const Home: NextPage = () => {
       const y =
         aboutMeRef?.current?.getBoundingClientRect().top +
         window.pageYOffset +
-        -64;
+        -64 -
+        20;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -50,6 +77,18 @@ const Home: NextPage = () => {
     if (skillsRef?.current) {
       const y =
         skillsRef?.current?.getBoundingClientRect().top +
+        window.pageYOffset +
+        -64;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  // scrolling Contact section
+  const contactRef = React.useRef<HTMLInputElement>(null);
+  const contactScroll = () => {
+    if (contactRef?.current) {
+      const y =
+        contactRef?.current?.getBoundingClientRect().top +
         window.pageYOffset +
         -64;
       window.scrollTo({ top: y, behavior: "smooth" });
@@ -88,9 +127,11 @@ const Home: NextPage = () => {
       {isMounted && (
         <React.Fragment>
           <Navbar
+            isRefNow={isRefNow}
             aboutMeScroll={aboutMeScroll}
             experienceScroll={experienceScroll}
             skillsScroll={skillsScroll}
+            contactScroll={contactScroll}
           />
           <ProfileIntro
             userDiscoverd={userDiscoverd}
@@ -102,7 +143,7 @@ const Home: NextPage = () => {
               <AboutMe aboutMeRef={aboutMeRef} />
               <Experience experienceRef={experienceRef} />
               <Skills skillsRef={skillsRef} />
-              <ContactMe />
+              <ContactMe contactRef={contactRef} />
             </React.Fragment>
           )}
         </React.Fragment>

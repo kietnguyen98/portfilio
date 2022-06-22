@@ -42,20 +42,27 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
     <div ref={skillsRef}>
       <div
         ref={listCardRef}
-        className="w-full flex justify-center items-center bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-300 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-16"
+        className="w-full flex justify-center items-center  bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-300 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-16"
       >
         <div className="w-full flex flex-col md:gap-20 sm:gap-16 gap-12">
-          <div className="w-full flex justify-center">
-            <div className="w-fit">
-              <p className="pp-medium text-xl text-slate-700 dark:text-slate-300 uppercase text-center">
-                My Skills
-              </p>
-              <div className="w-full flex justify-center mt-2">
-                <div
-                  style={{ width: "60%" }}
-                  className="bg-sky-400 h-1 rounded-md"
-                ></div>
+          <div className="w-full">
+            <div className="w-full flex justify-center">
+              <div className="w-fit">
+                <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase text-center">
+                  My Skills
+                </p>
+                <div className="w-full flex justify-center mt-2">
+                  <div
+                    style={{ width: "60%" }}
+                    className="bg-sky-400 h-1 rounded-md"
+                  ></div>
+                </div>
               </div>
+            </div>
+            <div className="w-full mt-8 xl:px-40 lg:px-32 md:px-32 sm:px-24 px-16">
+              <p className="pp-thin text-sm text-slate-500 dark:text-slate-300 text-center">
+                My Personal skills with my personal subjective rating :D.
+              </p>
             </div>
           </div>
           <div className="w-full flex justify-center">
@@ -81,7 +88,7 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
               offset={0}
             >
               <div className="w-fit xl:px-40 lg:px-32 md:px-24 sm:px-12 px-8">
-                <p className="pp-thin text-md text-slate-700 dark:text-slate-200 text-center">
+                <p className="pp-thin text-sm text-slate-700 dark:text-slate-100 text-center">
                   In addition, I also have some experience in using JavaScript
                   libraries like Reactjs, Jquery and other programming languages
                   like C++. My English skills are also quite good as I got

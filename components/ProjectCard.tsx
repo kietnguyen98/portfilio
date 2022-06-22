@@ -53,7 +53,7 @@ const ProjectCard: FunctionComponent<projectCardProps> = ({ data }) => {
       </AnimationOnScroll>
       <AnimationOnScroll animateIn="animate__rotateInUpRight" offset={0}>
         <div className="flex flex-col gap-2">
-          <p className="pp-medium text-slate-700 dark:text-slate-300 uppercase md:text-md text-sm">
+          <p className="pp-medium text-slate-700 dark:text-slate-100 uppercase md:text-md text-sm">
             website {data.name}{" "}
             {isMobile && (
               <span>
@@ -67,14 +67,14 @@ const ProjectCard: FunctionComponent<projectCardProps> = ({ data }) => {
               </span>
             )}
           </p>
-          <p className="pp-medium text-slate-500 dark:text-slate-200 text-sm">
+          <p className="pp-medium text-slate-500 dark:text-slate-300 text-sm">
             type:{" "}
             {data.type === "company"
               ? "Company's project"
               : "Personal's project"}
             , role: {data.position}
           </p>
-          <p className="pp-thin text-slate-500 dark:text-slate-200 text-sm">
+          <p className="pp-thin text-slate-500 dark:text-slate-300 text-sm">
             {data.description}
           </p>
         </div>
