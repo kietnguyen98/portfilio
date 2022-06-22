@@ -23,15 +23,19 @@ const CompanyCard: FunctionComponent<companyCardProps> = ({
   return (
     <AnimationOnScroll animateIn="animate__fadeIn" duration={1.5}>
       <div className="w-full">
-        <p className="pp-medium text-md text-slate-700">{position}</p>
-        <p className="pp-thin text-sm text-slate-400">
+        <p className="pp-medium text-md text-slate-700 dark:text-slate-400">
+          {position}
+        </p>
+        <p className="pp-thin text-sm text-slate-400 dark:text-slate-200">
           <FontAwesomeIcon icon={faCalendar} fixedWidth /> {duration}
         </p>
-        <p className="pp-thin text-sm text-sky-500">
+        <p className="pp-thin text-sm text-sky-500 dark:text-sky-400">
           {" "}
           <FontAwesomeIcon icon={faLocationDot} fixedWidth /> {companyName}.
         </p>
-        <p className="pp-thin text-sm text-slate-600">{description}.</p>
+        <p className="pp-thin text-sm text-slate-600 dark:text-slate-300">
+          {description}.
+        </p>
       </div>
     </AnimationOnScroll>
   );

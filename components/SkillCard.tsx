@@ -32,7 +32,7 @@ const SkillCard: FunctionComponent<skillCardProps> = ({
   }, [isCardMounted]);
 
   return (
-    <div className="h-full relative shadow-xl hover:shadow-2xl shadow-indigo-500/40 cursor-pointer transition-all duration-500 rounded-full overflow-hidden group">
+    <div className="h-full relative shadow-lg hover:shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/40 cursor-pointer transition-all duration-500 rounded-full overflow-hidden group">
       <div className="h-56 w-56 bg-slate-50 rounded-full flex items-center justify-center">
         <div className="h-48 w-48 bg-slate-50 rounded-full shadow-inner">
           <div className="w-48 h-48 grid grid-rows-3 grid-flow-col justify-center items-center group-hover:scale-150 transition-all duration-500">
