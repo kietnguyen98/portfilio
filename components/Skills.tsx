@@ -42,13 +42,13 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
     <div ref={skillsRef}>
       <div
         ref={listCardRef}
-        className="w-full flex justify-center items-center  bg-gradient-to-r from-cyan-100 dark:from-stone-700 transition duration-300 via-sky-100 dark:via-neutral-700 to-blue-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-16"
+        className="w-full flex justify-center items-center transition-all duration-300 bg-gradient-to-r from-indigo-100 dark:from-stone-700 via-sky-100 dark:via-neutral-700 to-cyan-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-16"
       >
         <div className="w-full flex flex-col md:gap-20 sm:gap-16 gap-12">
           <div className="w-full">
             <div className="w-full flex justify-center">
               <div className="w-fit">
-                <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase text-center">
+                <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase text-center tracking-wider">
                   My Skills
                 </p>
                 <div className="w-full flex justify-center mt-2">

@@ -27,7 +27,7 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
                 <p className="pp-medium uppercase text-2xl text-slate-700 dark:text-slate-100">
                   DROP A LINE
                 </p>
-                <p className="pp-thin text-sm text-slate-400 dark:text-slate-400">
+                <p className="pp-thin text-sm text-slate-500 dark:text-slate-300">
                   I am open for any suggestion or just to have a chat
                 </p>
               </div>
@@ -65,7 +65,10 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
                   />
                 </div>
                 <div className="w-full">
-                  <button className="w-full rounded-md bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 px-auto py-2 pp-medium text-slate-50 text-md hover:shadow-xl transition-all duration-300">
+                  <button
+                    onClick={() => alert("hey, have a nice day !")}
+                    className="w-full rounded-md bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 px-auto py-2 pp-medium text-slate-50 text-md hover:shadow-xl transition-all duration-300"
+                  >
                     <FontAwesomeIcon icon={faPaperPlane} fixedWidth /> Send
                     Message
                   </button>
@@ -79,7 +82,7 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
                 <p className="pp-medium uppercase text-2xl text-slate-700 dark:text-slate-100">
                   contact me
                 </p>
-                <p className="pp-thin text-sm text-slate-400 dark:text-slate-400">
+                <p className="pp-thin text-sm text-slate-500 dark:text-slate-300">
                   Hey There !, Have any works you want to done by me? contact me
                   via
                 </p>
@@ -142,9 +145,9 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
           </div>
         </div>
       </div>
-      <div className="bg-slate-100 w-full h-24 flex items-center justify-center dark:bg-neutral-900">
+      <div className="w-full h-28 flex items-center justify-center bg-slate-50 dark:bg-neutral-800">
         <p className="pp-thin text-slate-600 dark:text-slate-400 text-sm">
-          Copyright © 2022 KietNguyen98 All rights reserved
+          Copyright © 2022 All rights reserved | Made by KietNguyen98
         </p>
       </div>
     </React.Fragment>
