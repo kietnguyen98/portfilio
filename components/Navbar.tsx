@@ -113,7 +113,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
       ) : (
         <div
           className={
-            "w-full fixed z-50 top-0 h-16 flex transition duration-300 items-center " +
+            "w-full max-w-screen-2xl fixed z-50 top-0 h-16 flex transition duration-300 items-center " +
             navBackground
           }
         >

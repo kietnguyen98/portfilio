@@ -7,6 +7,7 @@ import AboutMe from "../components/AboutMe";
 import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
+import FindMe from "../components/FindMe";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -118,14 +119,15 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-neutral-800">
+    <div className="min-h-screen">
       <Head>
         <title>Kiet&apos;s Portfilio</title>
         <meta name="kiet Nguyen portfilio" content="This is My Portfilio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/tiger.png" />
       </Head>
       {isMounted && (
-        <React.Fragment>
+        <div className="block ml-auto mr-auto max-w-screen-2xl">
           <Navbar
             isRefNow={isRefNow}
             aboutMeScroll={aboutMeScroll}
@@ -140,13 +142,14 @@ const Home: NextPage = () => {
           />
           {isDiscoverd && (
             <React.Fragment>
-              <AboutMe aboutMeRef={aboutMeRef} />
+              <AboutMe aboutMeRef={aboutMeRef} contactScroll={contactScroll} />
               <Experience experienceRef={experienceRef} />
+              <FindMe contactScroll={contactScroll}/>
               <Skills skillsRef={skillsRef} />
               <ContactMe contactRef={contactRef} />
             </React.Fragment>
           )}
-        </React.Fragment>
+        </div>
       )}
     </div>
   );

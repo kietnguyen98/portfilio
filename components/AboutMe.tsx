@@ -7,9 +7,13 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 type aboutMeProps = {
   aboutMeRef: any;
+  contactScroll: any;
 };
 
-const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
+const AboutMe: FunctionComponent<aboutMeProps> = ({
+  aboutMeRef,
+  contactScroll,
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 900 });
 
   return (
@@ -22,7 +26,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
           >
             <div className="flex flex-col gap-4">
               <div className="w-fit">
-                <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase">
+                <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase tracking-wider">
                   about me
                 </p>
                 <div
@@ -94,7 +98,10 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
                   offset={50}
                   duration={1.5}
                 >
-                  <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-lg hover:shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/40">
+                  <button
+                    onClick={contactScroll}
+                    className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-lg hover:shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/40"
+                  >
                     <p className="pp-thin text-slate-100 text-sm">Contact me</p>
                   </button>
                 </AnimationOnScroll>
@@ -138,7 +145,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
               >
                 <div className="flex flex-col gap-4 items-start justify-center h-fit">
                   <div className="w-fit">
-                    <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase">
+                    <p className="pp-medium text-xl text-slate-700 dark:text-slate-100 uppercase tracking-wider">
                       about me
                     </p>
                     <div
@@ -169,7 +176,10 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({ aboutMeRef }) => {
                     </p>
                   </div>
                   <div className="w-fit">
-                    <button className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-md hover:shadow-xl shadow-indigo-500/40 hover:shadow-indigo-500/40">
+                    <button
+                      onClick={contactScroll}
+                      className="bg-gradient-to-r from-cyan-400 via-sky-400 to-blue-400 hover:from-cyan-500 hover:via-sky-500 hover:to-blue-500 transition duration-300 px-6 py-2 cursor-pointer shadow-md hover:shadow-xl shadow-indigo-500/40 hover:shadow-indigo-500/40"
+                    >
                       <p className="pp-thin text-slate-100 text-sm">
                         Contact me
                       </p>
