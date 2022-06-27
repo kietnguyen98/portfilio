@@ -134,9 +134,16 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
                       facebook
                     </p>
                   </div>
-                  <div className="cursor-pointer">
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => {
+                      window.open(
+                        "https://www.linkedin.com/in/m%E1%BA%A1nh-ki%E1%BB%87t-nguy%E1%BB%85n-h%C3%A0n-275573243/"
+                      );
+                    }}
+                  >
                     <p className="pp-medium text-sm uppercase text-sky-500">
-                      zalo
+                      linkedin
                     </p>
                   </div>
                 </div>
