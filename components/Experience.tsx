@@ -40,7 +40,11 @@ const Experience: FunctionComponent<experienceProps> = ({ experienceRef }) => {
         </div>
         <div className="w-full mt-8 xl:px-24 lg:px-20 md:px-16 sm:px-12 px-8">
           <div className="h-full flex gap-2">
-            <AnimationOnScroll animateIn="animate__fadeInLeftBig" offset={0}>
+            <AnimationOnScroll
+              animateIn="animate__fadeInLeftBig"
+              offset={0}
+              duration={1.2}
+            >
               <div className="h-full border-solid border-l-4 border-sky-400 flex flex-col">
                 <p className="mt-0 mb-auto ml-2 pp-thin text-sm upppercase text-sky-500 dark:text-sky-300">
                   2017

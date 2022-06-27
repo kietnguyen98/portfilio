@@ -31,13 +31,25 @@ const SkillCard: FunctionComponent<skillCardProps> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCardMounted]);
 
+  const poinToTextDisplay = (point: number) => {
+    if (point >= 5 && point <= 7) {
+      return "Have knowledge";
+    } else if (point > 7 && point <= 8) {
+      return "Average skill";
+    } else if (point > 8 && point <= 9) {
+      return "good skills";
+    } else if (point > 9 && point <= 10) {
+      return "excellent skills";
+    }
+  };
+
   return (
     <div className="h-full relative shadow-lg hover:shadow-2xl shadow-indigo-500/40 hover:shadow-indigo-500/40 cursor-pointer transition-all duration-500 rounded-full overflow-hidden group">
       <div className="h-56 w-56 bg-slate-50 rounded-full flex items-center justify-center">
         <div className="h-48 w-48 bg-slate-50 rounded-full shadow-inner">
-          <div className="w-48 h-48 grid grid-rows-3 grid-flow-col justify-center items-center group-hover:scale-150 transition-all duration-500">
+          <div className="w-48 h-48 grid grid-rows-3 grid-flow-col gap-2 justify-center items-center group-hover:scale-150 transition-all duration-500 p-4">
             <div className="flex items-center justify-center">
-              <p className="text-slate-600 pp-bold text-xl text-center uppercase block group-hover:hidden transition-all duration-500">
+              <p className="text-slate-600 pp-bold text-lg text-center uppercase block group-hover:hidden transition-all duration-500">
                 {skilData.name}
               </p>
             </div>
@@ -52,9 +64,9 @@ const SkillCard: FunctionComponent<skillCardProps> = ({
                 />
               </div>
             )}
-            <div className="flex items-center justify-center">
-              <p className="text-slate-600 pp-bold text-xl text-center tracking-widest block group-hover:hidden transition-all duration-500">
-                {point}/10
+            <div className="flex items-center justify-center px-4">
+              <p className="text-slate-600 pp-medium text-sm text-center tracking-widest block group-hover:hidden transition-all duration-500">
+                {poinToTextDisplay(point)}
               </p>
             </div>
           </div>

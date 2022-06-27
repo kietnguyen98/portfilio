@@ -18,7 +18,7 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
     <React.Fragment>
       <div
         ref={contactRef}
-        className="shadow-card-all h-full w-full bg-slate-50 dark:bg-neutral-800 py-20 xl:px-52 lg:px-36 md:px-24 sm:px-16 px-10 flex items-center justify-center"
+        className="shadow-card-all h-full w-full bg-slate-50 dark:bg-neutral-800 md:py-20 py-12 xl:px-52 lg:px-36 md:px-24 sm:px-16 px-8 flex items-center justify-center"
       >
         <div className="w-full grid md:grid-cols-2 grid-cols-1 lg:gap-32 md:gap-16 gap-12">
           <div className="w-full flex justify-start items-start">
@@ -145,8 +145,8 @@ const ContactMe: FunctionComponent<contactMeProps> = ({ contactRef }) => {
           </div>
         </div>
       </div>
-      <div className="w-full h-28 flex items-center justify-center bg-slate-50 dark:bg-neutral-800">
-        <p className="pp-thin text-slate-600 dark:text-slate-400 text-sm">
+      <div className="w-full sm:h-28 h-20 flex items-center justify-center bg-slate-50 dark:bg-neutral-800">
+        <p className="pp-thin text-slate-600 dark:text-slate-400 text-sm text-center">
           Copyright © 2022 All rights reserved | Made by KietNguyen98
         </p>
       </div>
