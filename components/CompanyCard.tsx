@@ -21,7 +21,7 @@ const CompanyCard: FunctionComponent<companyCardProps> = ({
   description,
 }) => {
   return (
-    <AnimationOnScroll animateIn="animate__fadeIn" duration={1.5}>
+    <AnimationOnScroll animateIn="animate__fadeInUp" duration={1.2}>
       <div className="w-full flex gap-2">
         <div className="w-8 h-auto flex justify-center items-center">
           <div className="h-4 w-4 flex justify-center items-center rounded-full border-solid border-2 border-sky-300 shadow-sky-300 shadow-2xl">

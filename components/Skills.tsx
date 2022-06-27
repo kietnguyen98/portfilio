@@ -42,7 +42,7 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
     <div ref={skillsRef}>
       <div
         ref={listCardRef}
-        className="w-full flex justify-center items-center transition-all duration-300 bg-gradient-to-r from-indigo-100 dark:from-stone-700 via-sky-100 dark:via-neutral-700 to-cyan-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-16 pb-16"
+        className="w-full flex justify-center items-center transition-all duration-300 bg-gradient-to-r from-indigo-100 dark:from-stone-700 via-sky-100 dark:via-neutral-700 to-cyan-100 dark:to-zinc-700 md:pt-24 sm:pt-16 pt-12 md:pb-16 pb-12"
       >
         <div className="w-full flex flex-col md:gap-20 sm:gap-16 gap-12">
           <div className="w-full">
@@ -59,7 +59,7 @@ const Skills: FunctionComponent<skillsProps> = ({ skillsRef }) => {
                 </div>
               </div>
             </div>
-            <div className="w-full mt-8 xl:px-40 lg:px-32 md:px-32 sm:px-24 px-16">
+            <div className="w-full mt-8 xl:px-40 lg:px-32 md:px-32 sm:px-20 px-8">
               <p className="pp-thin text-sm text-slate-500 dark:text-slate-300 text-center">
                 My Personal skills with my personal subjective rating :D.
               </p>
