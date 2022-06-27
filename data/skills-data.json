@@ -1,22 +1,22 @@
 [
   {
     "name": "html",
-    "point": 8.5,
+    "point": 8,
     "img": "/images/icons/html.png"
   },
   {
     "name": "css",
-    "point": 8.5,
+    "point": 8,
     "img": "/images/icons/css.png"
   },
   {
     "name": "js",
-    "point": 9,
+    "point": 8.5,
     "img": "/images/icons/javascript.png"
   },
   {
     "name": "ts",
-    "point": 6,
+    "point": 5,
     "img": "/images/icons/typescript.png"
   },
   {
@@ -26,12 +26,12 @@
   },
   {
     "name": "sql",
-    "point": 5,
+    "point": 6,
     "img": "/images/icons/sql.png"
   },
   {
     "name": "toeic",
-    "point": 6,
+    "point": 7,
     "img": "/images/icons/toeic.png"
   }
 ]
