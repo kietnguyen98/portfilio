@@ -32,14 +32,16 @@ const SkillCard: FunctionComponent<skillCardProps> = ({
   }, [isCardMounted]);
 
   const poinToTextDisplay = (point: number) => {
-    if (point >= 5 && point <= 7) {
-      return "Have knowledge";
-    } else if (point > 7 && point <= 8) {
-      return "Average skill";
-    } else if (point > 8 && point <= 9) {
-      return "good skills";
-    } else if (point > 9 && point <= 10) {
-      return "excellent skills";
+    if (point >= 5 && point < 6) {
+      return "Beginer";
+    } else if (point >= 6 && point < 7) {
+      return "Moderate";
+    } else if (point >= 7 && point < 8) {
+      return "Good";
+    } else if (point >= 8 && point < 9) {
+      return "Very good";
+    } else if (point >= 8 && point < 10) {
+      return "Excellent";
     }
   };
 
