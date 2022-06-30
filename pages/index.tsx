@@ -14,9 +14,20 @@ const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
   const [isMounted, setIsMounted] = React.useState(false);
   const [isRefNow, setIsRefNow] = React.useState("");
+  const [isGoUp, setIsGoUp] = React.useState(false);
 
   React.useEffect(() => {
     setIsMounted(true);
+
+    const checkGoUp = () => {
+      const viewHeight = window.pageYOffset - 64;
+      if (viewHeight > 100) {
+        setIsGoUp(true);
+      } else {
+        setIsGoUp(false);
+      }
+    };
+    document.addEventListener("scroll", checkGoUp);
 
     const checkRefNow = () => {
       if (window && aboutMeRef?.current && experienceRef?.current) {
@@ -40,6 +51,7 @@ const Home: NextPage = () => {
     document.addEventListener("scroll", checkRefNow);
     return () => {
       document.removeEventListener("scroll", checkRefNow);
+      document.removeEventListener("scroll", checkGoUp);
     };
   }, []);
 
@@ -118,24 +130,6 @@ const Home: NextPage = () => {
       }, 300);
     }
   };
-
-  // render goUpButton
-  const [isGoUp, setIsGoUp] = React.useState(false);
-  React.useEffect(() => {
-    const checkGoUp = () => {
-      const viewHeight = window.pageYOffset - 64;
-      if (viewHeight > 100) {
-        setIsGoUp(true);
-      } else {
-        setIsGoUp(false);
-      }
-    };
-
-    document.addEventListener("scroll", checkGoUp);
-    return () => {
-      document.removeEventListener("scroll", checkGoUp);
-    };
-  }, []);
 
   return (
     <div className="min-h-screen">
