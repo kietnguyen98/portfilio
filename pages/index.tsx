@@ -8,6 +8,7 @@ import Experience from "../components/Experience";
 import Skills from "../components/Skills";
 import ContactMe from "../components/ContactMe";
 import FindMe from "../components/FindMe";
+import GoUpButton from "../components/GoUpButton";
 
 const Home: NextPage = () => {
   // keep every components which rendered after mounted to match the server side render
@@ -118,6 +119,24 @@ const Home: NextPage = () => {
     }
   };
 
+  // render goUpButton
+  const [isGoUp, setIsGoUp] = React.useState(false);
+  React.useEffect(() => {
+    const checkGoUp = () => {
+      const viewHeight = window.pageYOffset - 64;
+      if (viewHeight > 100) {
+        setIsGoUp(true);
+      } else {
+        setIsGoUp(false);
+      }
+    };
+
+    document.addEventListener("scroll", checkGoUp);
+    return () => {
+      document.removeEventListener("scroll", checkGoUp);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Head>
@@ -127,7 +146,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/tiger.png" />
       </Head>
       {isMounted && (
-        <div className="block ml-auto mr-auto max-w-screen-2xl">
+        <div className="block ml-auto mr-auto max-w-screen-2xl relative">
           <Navbar
             isRefNow={isRefNow}
             aboutMeScroll={aboutMeScroll}
@@ -144,9 +163,10 @@ const Home: NextPage = () => {
             <React.Fragment>
               <AboutMe aboutMeRef={aboutMeRef} contactScroll={contactScroll} />
               <Experience experienceRef={experienceRef} />
-              <FindMe contactScroll={contactScroll}/>
+              <FindMe contactScroll={contactScroll} />
               <Skills skillsRef={skillsRef} />
               <ContactMe contactRef={contactRef} />
+              <GoUpButton isShow={isGoUp} toTopScroll={toTopScroll} />
             </React.Fragment>
           )}
         </div>
