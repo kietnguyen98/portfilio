@@ -36,7 +36,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({
               </div>
               <div className="w-fit">
                 <p className="pp-medium text-slate-700 dark:text-slate-100 text-lg uppercase">
-                  Here is some of my personal details
+                  Here are some of my personal details
                 </p>
               </div>
               <div className="w-full">
@@ -69,7 +69,7 @@ const AboutMe: FunctionComponent<aboutMeProps> = ({
                     I started studying at Ho Chi Minh City University of
                     Technology from 2017 to 2022, my major is Computer Science
                     and Engineering. After graduation, I work full-time job at
-                    MLTechSoft Co., Ltd Front-end Developer, taking on the role
+                    MLTechSoft Co., As Front-End Developer, taking on the role
                     of main developer in the front-end section in many projects
                     of my company.
                   </p>
