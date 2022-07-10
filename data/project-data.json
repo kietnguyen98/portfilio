@@ -43,5 +43,14 @@
     "image": "/images/projects/idplvt.png",
     "description": "Made for IDP. using Technologies such as ReactJs (create-react-app), Material UI and NextJs as React FrameWork.",
     "link": "https://www.lamviectot.edu.vn/auth/login"
+  },
+  {
+    "id": 6,
+    "name": "Pepe the frog matching game",
+    "type": "personal",
+    "position": "Full stack dev",
+    "image": "/images/projects/pepe-game.png",
+    "description": "My first ever game which built on website. using Technologies such as MongoDB, Express, NodeJS, ReactJs (MERN), and TypeScript as well !",
+    "link": "https://pepethefrogmatching.netlify.app/"
   }
 ]
