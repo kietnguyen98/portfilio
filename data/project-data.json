@@ -46,11 +46,11 @@
   },
   {
     "id": 6,
-    "name": "Pepe the frog matching game",
+    "name": "Kiet's games",
     "type": "personal",
     "position": "Full stack dev",
-    "image": "/images/projects/pepe-game.png",
-    "description": "My first ever game which built on website. using Technologies such as MongoDB, Express, NodeJS, ReactJs (MERN), and TypeScript as well !",
-    "link": "https://pepethefrogmatching.netlify.app/"
+    "image": "/images/projects/my-game.png",
+    "description": "My first ever web games which such common games. using Technologies such as MongoDB, Express, NodeJS, ReactJs (MERN), and TypeScript programming languague as well !",
+    "link": "https://kietgames.netlify.app/"
   }
 ]
